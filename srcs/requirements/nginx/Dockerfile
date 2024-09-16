@@ -7,7 +7,8 @@ RUN mkdir -p /etc/nginx/ssl \
     && mkdir -p /var/run/nginx \
     && chown -R www-data:www-data /var/www/html
 
-# COPY default /etc/nginx/sites-available/.
+COPY default /etc/nginx/sites-available/.
+
 
 EXPOSE 80
 

@@ -17,16 +17,16 @@ services:
     build: requirements/wordpress
     container_name: wordpress
     image: wordpress:inception
-    # restart: always
-    # ports:
-    #   - "9000:9000"
-    # expose:
-    #   - "9000"
-    # networks:
-    #   - inception
+    restart: always
+    ports:
+      - "9000:9000"
+    expose:
+      - "9000"
+    networks:
+      - inception
     volumes:
       - wordpress_volume:/var/www/html
-    # env_file: .env
+    env_file: .env
     # depends_on:
     #   - mariadb
 
@@ -42,8 +42,8 @@ services:
     volumes:
       - wordpress_volume:/var/www/html
     env_file: .env
-    # depends_on:
-    #   - wordpress
+    depends_on:
+      - wordpress
 
 volumes:
 #   mariadb_volume:
