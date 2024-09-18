@@ -3,6 +3,10 @@
 docker cp wordpress:/etc/php/7.4/fpm/pool.d/www.conf ./srcs/requirements/wordpress/.
 docker cp nginx:/etc/nginx/sites-available/default ./srcs/requirements/nginx/.
 
+# Config files from mariadb
+
+docker cp mariadb:/etc/mysql/mariadb.conf.d/50-server.cnf ./srcs/requirements/mariadb/.
+
 # Inception 42
 
 ```sh

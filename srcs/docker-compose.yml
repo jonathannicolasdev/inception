@@ -1,17 +1,17 @@
 services:
-  # mariadb:
-  #   build: ./requirements/mariadb/.
-  #   container_name: mariadb
-  #   networks:
-  #     - inception
-  #   env_file: .env
-  #   ports:
-  #     - "3306:3306"
-  #   expose:
-  #     - 3306
-  #   volumes:
-  #     - mariadb_volume:/var/lib/mysql
-  #   restart: always
+  mariadb:
+    build: ./requirements/mariadb/.
+    container_name: mariadb
+    networks:
+      - inception
+    env_file: .env
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    volumes:
+      - mariadb_volume:/var/lib/mysql
+    restart: always
 
   wordpress:
     build: requirements/wordpress
@@ -27,8 +27,8 @@ services:
     volumes:
       - wordpress_volume:/var/www/html
     env_file: .env
-    # depends_on:
-    #   - mariadb
+    depends_on:
+      - mariadb
 
   nginx:
     build: requirements/nginx
@@ -46,11 +46,11 @@ services:
       - wordpress
 
 volumes:
-#   mariadb_volume:
-#     driver_opts:
-#       o: bind
-#       device: /Users/jonathannicolas/data/mariadb
-#       type: none
+  mariadb_volume:
+    driver_opts:
+      o: bind
+      device: /Users/jonathannicolas/data/mariadb
+      type: none
 
   wordpress_volume:
     driver_opts:
