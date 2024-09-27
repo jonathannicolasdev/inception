@@ -10,6 +10,6 @@ RUN mkdir -p /etc/nginx/ssl \
 COPY default /etc/nginx/sites-available/.
 
 
-EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
