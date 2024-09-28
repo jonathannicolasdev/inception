@@ -1,24 +1,4 @@
-# You can extract configurations from running containers as follows
-
-# Config files from wordpress & nginx container
-
-docker cp wordpress:/etc/php/7.4/fpm/pool.d/www.conf ./srcs/requirements/wordpress/.
-docker cp nginx:/etc/nginx/sites-available/default ./srcs/requirements/nginx/.
-
-# Config files from mariadb
-
-docker cp mariadb:/etc/mysql/mariadb.conf.d/50-server.cnf ./srcs/requirements/mariadb/.
-
 # Inception 42
-
-```sh
-docker logs <ncontainer_name>
-```
-
-```sh
-sudo vim /etc/hosts
-127.0.0.1 example.42.fr
-```
 
 # Docker on my VM
 
@@ -84,34 +64,29 @@ The website should be accessible at `https://localhost` or `https://jnicolas.42.
 
 ### Useful Commands for Debugging Docker Containers
 
-- Show logs:
+Show logs:
 
-  ```sh
-  docker-compose logs
-  ```
+```sh
+docker-compose logs
+```
 
-- Run a container in interactive mode:
+Run a container in interactive mode:
 
-  ```sh
-  docker run -it <image_ID>
-  ```
+```sh
+docker run -it <image_name>
+```
 
-- Execute a command inside a running container:
+Execute a command inside a running container:
 
-  ```sh
-  docker exec <container_name> <command>
-  ```
+```sh
+docker exec <container_name> <command>
+```
 
-- Execute an interactive command inside a running container:
+Open a shell inside a running container:
 
-  ```sh
-  docker exec -it <container_name> <command>
-  ```
-
-- Open a shell inside a running container:
-  ```sh
-  docker exec -it <container_name> sh
-  ```
+```sh
+docker exec -it <container_name> sh
+```
 
 #Test MariaDB Connectivity Inspect the Database:
 
@@ -121,3 +96,27 @@ mysql -h <mariadb_container_name> -u <db_user> -p
 docker exec -it <mariadb_container_name> mysql -u root -p
 docker logs <mariadb_container_name>
 ```
+
+##Logs
+
+```sh
+docker logs <ncontainer_name>
+```
+
+##hostname
+
+```sh
+sudo vim /etc/hosts
+127.0.0.1 example.42.fr
+```
+
+## You can extract configurations from running containers as follows
+
+## Config files from wordpress & nginx container
+
+docker cp wordpress:/etc/php/7.4/fpm/pool.d/www.conf ./srcs/requirements/wordpress/.
+docker cp nginx:/etc/nginx/sites-available/default ./srcs/requirements/nginx/.
+
+## Config files from mariadb
+
+docker cp mariadb:/etc/mysql/mariadb.conf.d/50-server.cnf ./srcs/requirements/mariadb/.
