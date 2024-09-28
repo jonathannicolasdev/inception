@@ -13,7 +13,7 @@ server {
 
 	ssl_protocols TLSv1.2 TLSv1.3;
 
-	server_name $DOMAIN_NAME;
+	server_name jnicolas.42.fr;
 
 	location / {
 		# First attempt to serve request as file, then

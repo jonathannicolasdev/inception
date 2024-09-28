@@ -6,15 +6,15 @@ RUN apt update && \
 RUN mkdir -p /run/mysqld
 RUN chown -R mysql:mysql /run/mysqld
 
-COPY ./start.sh /
-COPY 50-server.cnf /etc/mysql/mariadb.conf.d/.
+COPY ./tools/setup.sh /
+COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/.
 # COPY init.sql /etc/sql/init.sql
 
-RUN chmod +x /start.sh
+RUN chmod +x /setup.sh
 
 EXPOSE 3306
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/setup.sh"]
 
 
 
