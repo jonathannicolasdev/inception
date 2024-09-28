@@ -88,7 +88,7 @@ Open a shell inside a running container:
 docker exec -it <container_name> sh
 ```
 
-#Test MariaDB Connectivity Inspect the Database:
+# Test MariaDB Connectivity Inspect the Database:
 
 ```sh
 docker exec -it <wordpress_container_name> sh
@@ -97,13 +97,13 @@ docker exec -it <mariadb_container_name> mysql -u root -p
 docker logs <mariadb_container_name>
 ```
 
-##Logs
+## Logs
 
 ```sh
 docker logs <ncontainer_name>
 ```
 
-##hostname
+## hostname
 
 ```sh
 sudo vim /etc/hosts
