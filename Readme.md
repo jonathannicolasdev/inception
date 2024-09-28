@@ -97,6 +97,14 @@ docker exec -it <mariadb_container_name> mysql -u root -p
 docker logs <mariadb_container_name>
 ```
 
+# Test Wordpress
+
+```sh
+docker exec -it <container_name> netstat -tuln | grep 9000
+```
+
+tcp 0 0 0.0.0.0:9000 0.0.0.0:\* LISTEN
+
 ## Logs
 
 ```sh
